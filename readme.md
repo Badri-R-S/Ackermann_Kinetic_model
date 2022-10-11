@@ -2,17 +2,17 @@
 [![Build Status](https://app.travis-ci.com/Irdab2000/ENPM808X-Midterm.svg?branch=master)](https://app.travis-ci.com/Irdab2000/ENPM808X-Midterm)
 [![Coverage Status](https://coveralls.io/repos/github/Irdab2000/ENPM808X-Midterm/badge.svg?branch=master)](https://coveralls.io/github/Irdab2000/ENPM808X-Midterm?branch=master)
 ---
+## Author
+- Driver for Phase 0 - Badrinaryanan Raghunathan Srikumar
+- Navigator for Phase 0 - Smit Dumore
 
 ## Overview
 
-Simple starter C++ project with:
-
-- cmake
-- googletest
+Designing a new controller module using high-quality software engineering practices, for ACME robotics
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone https://github.com/Irdab2000/ENPM808X-Midterm.git
 cd <path to repository>
 mkdir build
 cd build

@@ -1,6 +1,6 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+[![Build Status](https://app.travis-ci.com/Irdab2000/ENPM808X-Midterm.svg?branch=master)](https://app.travis-ci.com/Irdab2000/ENPM808X-Midterm)
+[![Coverage Status](https://coveralls.io/repos/github/Irdab2000/ENPM808X-Midterm/badge.svg?branch=master)](https://coveralls.io/github/Irdab2000/ENPM808X-Midterm?branch=master)
 ---
 
 ## Overview

@@ -1,4 +1,4 @@
-# C++ Boilerplate
+# C++ Boilerplate 
 [![Build Status](https://app.travis-ci.com/Irdab2000/ENPM808X-Midterm.svg?branch=master)](https://app.travis-ci.com/Irdab2000/ENPM808X-Midterm)
 [![Coverage Status](https://coveralls.io/repos/github/Irdab2000/ENPM808X-Midterm/badge.svg?branch=master)](https://coveralls.io/github/Irdab2000/ENPM808X-Midterm?branch=master)
 ---
@@ -14,6 +14,15 @@ Designing a new controller module using high-quality software engineering practi
 <p align="center">
 <img src="UML/UML_808X-Midterm-Phase0.jpeg"/>
 </p>
+
+##Quad Chart
+<p align="center">
+<img src="Quad chart/Quad-Chart-Phase 0.pdf"/>
+</p>
+
+## Presentation video link 
+
+ -https://youtu.be/P2H2bpZX4jc
 
 ## Standard install via command-line
 ```

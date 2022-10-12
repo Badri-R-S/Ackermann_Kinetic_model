@@ -17,7 +17,7 @@ Designing a new controller module using high-quality software engineering practi
 
 ##Quad Chart
 <p align="center">
-<img src="Quad chart/Quad-Chart-Phase 0.pdf"/>
+<img src="Quad chart/Quad-Chart-Phase 0.jpg"/>
 </p>
 
 ## Presentation video link 

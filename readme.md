@@ -10,6 +10,11 @@
 
 Designing a new controller module using high-quality software engineering practices, for ACME robotics
 
+## UML Diagram
+<p align="center">
+<img src="UML/UML_808X-Midterm-Phase0.jpeg"/>
+</p>
+
 ## Standard install via command-line
 ```
 git clone https://github.com/Irdab2000/ENPM808X-Midterm.git

@@ -1,6 +1,7 @@
 # C++ Boilerplate 
 [![Build Status](https://app.travis-ci.com/Irdab2000/ENPM808X-Midterm.svg?branch=master)](https://app.travis-ci.com/Irdab2000/ENPM808X-Midterm)
 [![Coverage Status](https://coveralls.io/repos/github/Irdab2000/ENPM808X-Midterm/badge.svg?branch=master)](https://coveralls.io/github/Irdab2000/ENPM808X-Midterm?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ---
 ## Author
 - Driver for Phase 0 - Badrinaryanan Raghunathan Srikumar

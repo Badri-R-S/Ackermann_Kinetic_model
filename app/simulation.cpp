@@ -12,12 +12,12 @@ void Simulation::runSim(){
     u_inp.getUserInputs();
 
     Robot car(1.0, 0.1, 0.25);
-    double sterring  = car.computeTurnRadius(u_inp.getTargetVelocity(), u_inp.getTargetHeading());
-
+    double steering  = car.computeTurnRadius(u_inp.getTargetVelocity(), u_inp.getTargetHeading());
+    
     Controller car_controller(0.1, 0.0, 0.0, 10);
     std::vector<double> result = car_controller.computePID(initial_heading ,  u_inp.getTargetHeading(), 
                                                     initial_velocity, u_inp.getTargetVelocity());
-    
+    result.push_back(steering);
     for(auto it:result){
         std::cout << it  << "\n"; 
     }

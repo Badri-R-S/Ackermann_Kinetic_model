@@ -27,6 +27,7 @@ std::vector<double> Controller :: computePID(double sp_angle, double pv_angle,
     sp_angle = 0.0;
     pv_angle = 0.0;
     pv_vel = 0.0;
+    sp_vel = 0.0;
     result.push_back(sp_angle + pv_angle + pv_vel + sp_vel);
     return result;
 }

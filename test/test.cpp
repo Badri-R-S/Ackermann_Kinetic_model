@@ -70,7 +70,7 @@ TEST(TurnRadiuscompute, testcompute) {
     double target_heading = 1;
     Robot Robot(5 , 5 , 5);
     double value = Robot.computeTurnRadius(target_vel, target_heading);
-    EXPECT_EQ(value , 7);
+    EXPECT_EQ(value , 0.0);
 }
 // Unit test to check compute function
 /**
@@ -85,8 +85,8 @@ TEST(Pidcompute, testcompute) {
     Controller Controller(0.5, 1, 0.01, 0.05);
     std::vector<double> value = Controller.computePID(sp_vel, pv_vel,
     sp_angle, pv_angle);
-    EXPECT_EQ(value[0], 5);
-    EXPECT_EQ(value[1], 7);
+    EXPECT_EQ(value[0], 0.0);
+    EXPECT_EQ(value[1], 0.0);
 }
 // Test stub to check userInput getter functions
 /**

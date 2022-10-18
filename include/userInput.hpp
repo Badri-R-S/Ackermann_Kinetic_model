@@ -6,10 +6,10 @@
 class UserInput{
     double intial_velocity = 0.0;  
     double intial_heading = 0.0;  
-    double target_velocity;
-    double target_heading;
+    double target_velocity  = 0.0;
+    double target_heading = 0.0;
     public :
-    UserInput(double iv, double ih, double tv, double th);
+    UserInput(double iv, double ih);
     
     /**
     * @brief: Prompts user for target inputs

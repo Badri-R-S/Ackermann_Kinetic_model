@@ -11,11 +11,6 @@
  * 
  */
 
-
-
-
-
-
 // Necessary header file sincluded
 #include "../include/robot.hpp"
 #include <iostream>
@@ -27,6 +22,8 @@ Robot ::Robot(double wb, double wr, double tw) {
 }
 // compute function that computes turn radius of the robot
 double Robot:: computeTurnRadius(double target_vel, double target_heading ) {
-    return 7;
+    target_vel = 0.0;
+    target_heading = 0.0;
+    return target_heading + target_vel;
 }
 

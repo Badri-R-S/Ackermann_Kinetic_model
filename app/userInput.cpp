@@ -7,19 +7,17 @@
 * @brief: Prompts user for target inputs
 * @return: None
 */
-UserInput:: UserInput(double iv, double ih, double tv, double th) {
+UserInput:: UserInput(double iv, double ih) {
     intial_velocity = iv;
-    target_velocity = tv;
     intial_heading = ih;
-    target_heading = th;
 }
 void UserInput::getUserInputs() {
 
     std::cout << "Enter the target heading (in degrees): ";
-    double target_heading_deg;
+    double target_heading_deg, target_heading_rad{0.0};
     std::cin >> target_heading_deg;
-    target_heading_deg = (target_heading_deg*PI)/180;
-    this->target_heading = target_heading_deg;
+    target_heading_rad = (target_heading_deg*PI)/180;
+    this->target_heading = target_heading_rad;
 
     std::cout << "Enter the target speed (in m/s): ";
     std::cin >> this->target_velocity;

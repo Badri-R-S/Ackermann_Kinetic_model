@@ -94,7 +94,7 @@ TEST(Pidcompute, testcompute) {
  * 
  */ 
 TEST(Targetvelcheck, testcompute) {
-    UserInput UserInput(0 , 0 , 0 , 0);
+    UserInput UserInput(0.0 , 0.0);
     EXPECT_EQ(UserInput.getTargetVelocity() , 0);
     EXPECT_EQ(UserInput.getTargetHeading(), 0);
 }

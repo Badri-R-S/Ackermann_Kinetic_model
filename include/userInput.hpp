@@ -3,14 +3,14 @@
 #define INCLUDE_USERINPUT_HPP_
 
 
-class userInput{
-public :
+class UserInput{
     double intial_velocity = 0.0;  
     double intial_heading = 0.0;  
     double target_velocity;
     double target_heading;
-
- 
+    public :
+    UserInput(double iv, double ih, double tv, double th);
+    
     /**
     * @brief: Prompts user for target inputs
     * @return: None

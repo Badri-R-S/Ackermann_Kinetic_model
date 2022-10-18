@@ -10,13 +10,12 @@
  * 
  */
 
-
-
 // Necessary header files added
 #include <gtest/gtest.h>
 #include<iostream>
 #include "../include/controller.hpp"
 #include "../include/robot.hpp"
+#include "../include/userInput.hpp"
 
 ::testing::AssertionResult IsBetweenmaxmin(double val, double a, double b) {
     if ( ( val >= a) && ( val <= b) )
@@ -88,4 +87,14 @@ TEST(Pidcompute, testcompute) {
     sp_angle, pv_angle);
     EXPECT_EQ(value[0], 5);
     EXPECT_EQ(value[1], 7);
+}
+// Test stub to check userInput getter functions
+/**
+ * @brief Test stub to check userInput getter functions
+ * 
+ */ 
+TEST(Targetvelcheck, testcompute) {
+    UserInput UserInput(0 , 0 , 0 , 0);
+    EXPECT_EQ(UserInput.getTargetVelocity() , 0);
+    EXPECT_EQ(UserInput.getTargetHeading(), 0);
 }

@@ -7,7 +7,13 @@
 * @brief: Prompts user for target inputs
 * @return: None
 */
-void UserInputs::getUserInputs() {
+UserInput:: UserInput(double iv, double ih, double tv, double th) {
+    intial_velocity = iv;
+    target_velocity = tv;
+    intial_heading = ih;
+    target_heading = th;
+}
+void UserInput::getUserInputs() {
 
     std::cout << "Enter the target heading (in degrees): ";
     double target_heading_deg;
@@ -24,7 +30,7 @@ void UserInputs::getUserInputs() {
 * @brief: Return the target velocity.
 * @return: target velocity.
 */
-double UserInputs::getTargetVelocity();
+double UserInput::getTargetVelocity(){
     return target_velocity;
 }
 
@@ -32,7 +38,7 @@ double UserInputs::getTargetVelocity();
 * @brief: Return the target heading.
 * @return: target heading.
 */
-double UserInputs::getTargetHeading()
+double UserInput::getTargetHeading(){
     return target_heading;
 }
 

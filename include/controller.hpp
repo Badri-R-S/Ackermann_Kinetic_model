@@ -26,10 +26,9 @@ const double Kdmax = 1;
 const double Kdmin = -1;
 const double tmax = 0.05;
 
-// Class definition with it's private members
+
 /**
- * @brief Controller class with the respective P,I,D constants
- * 
+ * @brief Controller class definition 
  */
 class Controller {
     double Kp;
@@ -37,17 +36,51 @@ class Controller {
     double Kd;
     double dt;
  public:
-// Constructor definition
+    /**
+     * @brief Construct a new Controller object
+     * 
+     * @param p - proportional gain value
+     * @param i - integral gain value
+     * @param d - derivative gain value
+     * @param t - simulation time
+     */
     Controller(double p, double i, double d, double t);
+
+    /**
+     * @brief - Funnction to compute system outputs with PID control
+     * @param sp_angle - set point heading
+     * @param pv_angle - current heading
+     * @param sp_vel - set point velocity
+     * @param pv_vel - current velocity
+     * @return std::vector<double> - vector of calculated outputs
+     */
     std::vector<double> computePID(double sp_angle, double pv_angle,
     double sp_vel, double pv_vel);
-// Function to return Proportional constant
+
+    /**
+     * @brief Get the Kp value
+     * @return double 
+     */
     double getKp();
-// Function to return Integral constant
+
+    /**
+     * @brief Get the Ki value
+     * @return double 
+     */
     double getKi();
-// Function to return Derivative constant
+
+    /**
+     * @brief Get the Kd value
+     * 
+     * @return double 
+     */
     double getKd();
-// Function to return time interval
+
+    /**
+     * @brief get the dt value
+     * 
+     * @return double 
+     */
     double getdt();
 };
 

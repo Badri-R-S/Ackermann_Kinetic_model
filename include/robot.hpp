@@ -15,10 +15,8 @@
 #ifndef INCLUDE_ROBOT_HPP_
 #define INCLUDE_ROBOT_HPP_
 
-// Class Robot definition.
 /**
- * @brief Class with the wheel radius, wheel_base length and track_width
-          as it's members
+ * @brief Class definition of Robot
  * 
  */
 class Robot {
@@ -26,9 +24,22 @@ class Robot {
     double wheel_radius;
     double track_width;
  public :
-// COnstructor definition
+    /**
+     * @brief Construct a new Robot object
+     * 
+     * @param wb - wheel base of car
+     * @param wr - wheel radius of the car
+     * @param tw - track width of the car
+     */
     Robot(double wb, double wr, double tw);
-// Function definition to compute turn radius
+
+    /**
+     * @brief Compute the turn radius for the car 
+     * 
+     * @param target_vel - target velocity given by the user
+     * @param target_heading - target heading given by the user
+     * @return double - steering angle
+     */
     double computeTurnRadius(double target_vel, double target_heading);
 };
 

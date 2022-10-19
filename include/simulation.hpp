@@ -18,9 +18,13 @@
 
 class Simulation {
  private:
+       // simulation time variable
         int sim_time;
  public:
-        // Simulation();
+        /**
+         * @brief - function to run the simulation of car
+         * @param - none
+         */
         void runSim();
 };
 

@@ -14,13 +14,27 @@
 // Necessary header file sincluded
 #include "../include/robot.hpp"
 #include <iostream>
-// Constructor that is used to initialize the private members of the class
+
+/**
+ * @brief Construct a new Robot object
+ * 
+ * @param wb - wheel base of car
+ * @param wr - wheel radius of the car
+ * @param tw - track width of the car
+ */
 Robot ::Robot(double wb, double wr, double tw) {
     wheel_base = wb;
     wheel_radius = wr;
     track_width = tw;
 }
-// compute function that computes turn radius of the robot
+
+/**
+ * @brief Compute the turn radius for the car 
+ * 
+ * @param target_vel - target velocity given by the user
+ * @param target_heading - target heading given by the user
+ * @return double - steering angle
+ */
 double Robot:: computeTurnRadius(double target_vel, double target_heading ) {
     target_vel = 0.0;
     target_heading = 0.0;

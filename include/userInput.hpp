@@ -23,6 +23,12 @@ class UserInput{
     double target_velocity  = 0.0;
     double target_heading = 0.0;
  public :
+    /**
+    * @brief: Constructor for the UserInput class
+    * @param - iv  intial velocity
+    * @param - ih intial heading angle
+    * @return: None
+    */
     UserInput(double iv, double ih);
 
     /**

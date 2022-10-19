@@ -10,20 +10,28 @@
  * 
  */
 
-
+// cpp headers
 #include "../include/userInput.hpp"
 #include <iostream>
 
 #define PI 3.14159265
 
 /**
-* @brief: Prompts user for target inputs
-* @return: None
+ * @brief: Constructor for the UserInput class
+ * @param - iv  intial velocity
+ * @param - ih intial heading angle
+ * @return: None
 */
 UserInput:: UserInput(double iv, double ih) {
     intial_velocity = iv;
     intial_heading = ih;
 }
+
+/**
+ * @brief - Function to get inputs from the user
+ * @param - none
+ * @return - none
+ */
 void UserInput::getUserInputs() {
     std::cout << "Enter the target heading (in degrees): ";
     double target_heading_deg, target_heading_rad{0.0};
@@ -34,7 +42,6 @@ void UserInput::getUserInputs() {
     std::cout << "Enter the target speed (in m/s): ";
     std::cin >> this->target_velocity;
 }
-
 
 /**
 * @brief: Return the target velocity.

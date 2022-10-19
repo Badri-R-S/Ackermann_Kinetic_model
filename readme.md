@@ -42,6 +42,8 @@ The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets c
 
 Phase 0 :
  -https://youtu.be/P2H2bpZX4jc
+Phase 1 :
+ -https://youtu.be/Pn1aeKCDAUI
  
 ## Doxygen
 

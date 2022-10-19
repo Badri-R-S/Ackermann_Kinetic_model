@@ -17,11 +17,12 @@
 #include "../include/controller.hpp"
 #include "../include/robot.hpp"
 
+//Simulation::Simulation(){}
 /**
  * @brief - function to run the simulation of car
  * @param - none
  */
-void Simulation::runSim() {
+std::vector<double>  Simulation::runSim() {
     double initial_heading = 0.0;
     double initial_velocity = 0.0;
 
@@ -42,4 +43,5 @@ void Simulation::runSim() {
     for (auto it : result) {
         std::cout << it  << "\n";
     }
+    return result;
 }

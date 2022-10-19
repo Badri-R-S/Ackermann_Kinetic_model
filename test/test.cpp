@@ -16,6 +16,7 @@
 #include "../include/controller.hpp"
 #include "../include/robot.hpp"
 #include "../include/userInput.hpp"
+#include "../include/simulation.hpp"
 
 ::testing::AssertionResult IsBetweenmaxmin(double val, double a, double b) {
     if ( ( val >= a) && ( val <= b) )

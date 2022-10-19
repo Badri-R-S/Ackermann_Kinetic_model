@@ -13,10 +13,12 @@
 // cpp headers
 #include <iostream>
 #include "../include/simulation.hpp"
+#include <vector>
 
 int main() {
     // creating a Simulation class object
     Simulation sim;
-    sim.runSim();
+    std::vector<double> test;
+    test = sim.runSim();
     return 0;
 }

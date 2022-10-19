@@ -15,6 +15,7 @@
 // header guards
 #ifndef INCLUDE_SIMULATION_HPP_
 #define INCLUDE_SIMULATION_HPP_
+#include<vector>
 
 class Simulation {
  private:
@@ -25,7 +26,7 @@ class Simulation {
          * @brief - function to run the simulation of car
          * @param - none
          */
-        void runSim();
+        std::vector<double> runSim();
 };
 
 #endif  // INCLUDE_SIMULATION_HPP_

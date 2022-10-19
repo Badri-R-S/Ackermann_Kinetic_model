@@ -43,10 +43,10 @@ The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets c
 Phase 0 :
  -https://youtu.be/P2H2bpZX4jc
  
-##Doxygen
+## Doxygen
+
 Doxygen is the de facto standard tool for generating documentation from annotated C++ sources.
-It can generate an on-line documentation browser (in HTML) and/or an off-line reference manual 
-(in $\mbox{\LaTeX}$) from a set of documented source files
+It can generate an on-line documentation browser (in HTML).
 
 Command to install doxygen, in command line type
 

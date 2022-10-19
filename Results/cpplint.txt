@@ -1,0 +1,18 @@
+cpplint app/*
+Done processing app/CMakeLists.txt
+Done processing app/controller.cpp
+Done processing app/main.cpp
+Done processing app/robot.cpp
+Done processing app/simulation.cpp
+Done processing app/userInput.cpp
+
+cpplint include/*
+Done processing include/controller.hpp
+Done processing include/robot.hpp
+Done processing include/simulation.hpp
+Done processing include/userInput.hpp
+
+cpplint test/*
+Done processing test/CMakeLists.txt
+Done processing test/main.cpp
+Done processing test/test.cpp

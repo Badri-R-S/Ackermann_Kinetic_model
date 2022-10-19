@@ -10,13 +10,13 @@
  * 
  */
 
-
-
 // Necessary header files added
 #include <gtest/gtest.h>
 #include<iostream>
 #include "../include/controller.hpp"
 #include "../include/robot.hpp"
+#include "../include/userInput.hpp"
+#include "../include/simulation.hpp"
 
 ::testing::AssertionResult IsBetweenmaxmin(double val, double a, double b) {
     if ( ( val >= a) && ( val <= b) )
@@ -71,7 +71,7 @@ TEST(TurnRadiuscompute, testcompute) {
     double target_heading = 1;
     Robot Robot(5 , 5 , 5);
     double value = Robot.computeTurnRadius(target_vel, target_heading);
-    EXPECT_EQ(value , 7);
+    EXPECT_EQ(value , 0.0);
 }
 // Unit test to check compute function
 /**
@@ -86,6 +86,16 @@ TEST(Pidcompute, testcompute) {
     Controller Controller(0.5, 1, 0.01, 0.05);
     std::vector<double> value = Controller.computePID(sp_vel, pv_vel,
     sp_angle, pv_angle);
-    EXPECT_EQ(value[0], 5);
-    EXPECT_EQ(value[1], 7);
+    EXPECT_EQ(value[0], 0.0);
+    EXPECT_EQ(value[1], 0.0);
+}
+// Test stub to check userInput getter functions
+/**
+ * @brief Test stub to check userInput getter functions
+ * 
+ */ 
+TEST(Targetvelcheck, testcompute) {
+    UserInput UserInput(0.0 , 0.0);
+    EXPECT_EQ(UserInput.getTargetVelocity() , 0);
+    EXPECT_EQ(UserInput.getTargetHeading(), 0);
 }

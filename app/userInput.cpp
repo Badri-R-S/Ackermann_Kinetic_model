@@ -1,3 +1,16 @@
+/**
+ * @file userInput.cpp
+ * @author Driver - Smit Dumore
+           Navigator - Badrinarayanan Raghunathan Srikumar
+ * @brief  Program that contains member functions for the userInput class
+ * @version 0.1
+ * @date 2022-10-18
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+
 #include "../include/userInput.hpp"
 #include <iostream>
 
@@ -12,7 +25,6 @@ UserInput:: UserInput(double iv, double ih) {
     intial_heading = ih;
 }
 void UserInput::getUserInputs() {
-
     std::cout << "Enter the target heading (in degrees): ";
     double target_heading_deg, target_heading_rad{0.0};
     std::cin >> target_heading_deg;
@@ -28,7 +40,7 @@ void UserInput::getUserInputs() {
 * @brief: Return the target velocity.
 * @return: target velocity.
 */
-double UserInput::getTargetVelocity(){
+double UserInput::getTargetVelocity() {
     return target_velocity;
 }
 
@@ -36,7 +48,7 @@ double UserInput::getTargetVelocity(){
 * @brief: Return the target heading.
 * @return: target heading.
 */
-double UserInput::getTargetHeading(){
+double UserInput::getTargetHeading() {
     return target_heading;
 }
 

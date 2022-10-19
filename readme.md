@@ -42,6 +42,27 @@ The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets c
 
 Phase 0 :
  -https://youtu.be/P2H2bpZX4jc
+ 
+##Doxygen
+Doxygen is the de facto standard tool for generating documentation from annotated C++ sources.
+It can generate an on-line documentation browser (in HTML) and/or an off-line reference manual 
+(in $\mbox{\LaTeX}$) from a set of documented source files
+
+Command to install doxygen, in command line type
+
+sudo apt install doxygen
+
+To generate doxygen documentation after installation, type
+
+doxygen -g <config-file>
+
+where <config-file> is the name of the configuration file that you want to create. 
+In this file edit the input and output directories, and the files that have to be included or excluded while generating the Doxygen comments.
+Finally, after generating the config file, type
+ 
+doxygen <config-file>
+ 
+This will generate a HTML and LATEX output of the Doxygen comments inside the output directory mentioned in the configuration file.
 
 ## Compiling and running via command-line
 ```

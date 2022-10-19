@@ -1,6 +1,7 @@
 # C++ Boilerplate 
 [![Build Status](https://github.com/Irdab2000/ENPM808X-Midterm/actions/workflows/build_and_coveralls.yml/badge.svg)](https://github.com/Irdab2000/ENPM808X-Midterm/.github/workflows/build_and_coveralls.yml)
-[![Coverage Status](https://coveralls.io/repos/github/Irdab2000/ENPM808X-Midterm/badge.svg?branch=master)](https://coveralls.io/github//smitdumore/ENPM808X-Midterm/?branch=Phase1
+[![Coverage Status](https://coveralls.io/repos/github/Irdab2000/ENPM808X-Midterm/badge.svg?branch=master)](https://coveralls.io/github//smitdumore/ENPM808X-Midterm/?branch=master
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ---
 ## Author

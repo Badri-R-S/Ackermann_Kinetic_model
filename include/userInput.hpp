@@ -18,6 +18,7 @@
 
 
 class UserInput{
+ private:
     double intial_velocity = 0.0;
     double intial_heading = 0.0;
     double target_velocity  = 0.0;

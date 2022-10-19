@@ -31,6 +31,7 @@ const double tmax = 0.05;
  * @brief Controller class definition 
  */
 class Controller {
+ private:
     double Kp;
     double Ki;
     double Kd;

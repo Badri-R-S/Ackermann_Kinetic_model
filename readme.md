@@ -7,13 +7,29 @@
 - Driver for Phase 0 - Badrinaryanan Raghunathan Srikumar
 - Navigator for Phase 0 - Smit Dumore
 
+- Driver for Phase 1 - Smit Dumore
+- Navigator for Phase 1 - Badrinaryanan Raghunathan Srikumar
+
 ## Overview
 
-Designing a new controller module using high-quality software engineering practices, for ACME robotics
+The objective of this project is to design and implement a controller for an Ackermann kinematic model for the Acme Robotics company. This controller can possibly be a component of a self driving car software stack. It can take inputs such as a goal location and goal heading from a path planning module and apply the appropriate control input to the motors of the vehicle. The input for our Ackermann controller is a target heading angle and velocity. The output will be the steering angles and angular velocities for each of the front wheel. We assume that the ideal steering angle for a given set of inputs is unique.
+
+1. Ackermann steering geometry is a geometric arrangement of linkages in the steering of a car or other vehicle designed to solve the problem of wheel slippage while executing a turn. The model has independent steerable wheels, to execute a turn, the inner and outer wheels have to trace out concentric circles of different radii. This ensures that the wheels do not slip. 
+2. The kinematic equations for this controller can be derived with basic trigonometry. These equations will be implemeted in C++ , because of its performance in real time systems. OOP practices will be used to make the code scalable.
+3. The controller will use a PID control algorithm for calculating the ideal inputs to the system at every time step. The PID control has many advantages, the major advantage  being its simplicity. But, the biggest disadvantage of PID is that we cannot add any constraints to the output signals and sometimes it can reach very high values, which may not be possible to attain in physical systems. 
+4. Here one of our constraints is that maximum steering angle constraint < 45 degrees. 
+
+## AIP and Sprint planning
+
+We followed Agile Iterative process throughout the develpment this project including pair programming , switching between Driver and Navigator roles in phase 0 and 1.
+The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets can be found below:
+
+1. https://docs.google.com/spreadsheets/d/15MsHHnaPDYa6_ac9_E7A4tZtzg4NLevfynDoTfalXG4/edit#gid=0
+2. https://docs.google.com/document/d/1Jcqsh3hmOmNMl5sPOOUJDDctLigFcafv_c4tUjaEYhQ/edit
 
 ## UML Diagram
 <p align="center">
-<img src="UML/UML_808X-Midterm-Phase0.jpeg"/>
+<img src="UML/revised/UML_classDiagram_Phase1_v2.png"/>
 </p>
 
 ##Quad Chart
@@ -23,18 +39,22 @@ Designing a new controller module using high-quality software engineering practi
 
 ## Presentation video link 
 
+Phase 0 :
  -https://youtu.be/P2H2bpZX4jc
 
-## Standard install via command-line
+## Compiling and running via command-line
 ```
-git clone https://github.com/Irdab2000/ENPM808X-Midterm.git
+git clone --recursive https://github.com/smitdumore/ENPM808X-Midterm.git
 cd <path to repository>
 mkdir build
 cd build
 cmake ..
 make
-Run tests: ./test/cpp-test
-Run program: ./app/shell-app
+Run programme: ./app/shell-app
+Enter target heading in degrees
+Enter target speed in m/s
+
+Run test: ./test/cpp-test
 ```
 
 ## Building for code coverage (for assignments beginning in Week 4)

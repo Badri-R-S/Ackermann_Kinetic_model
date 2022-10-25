@@ -12,6 +12,7 @@
 
 // Necessary header files included
 #include<vector>
+#include<tuple>
 
 // Header guards included
 #ifndef INCLUDE_CONTROLLER_HPP_
@@ -36,6 +37,8 @@ class Controller {
     double Ki;
     double Kd;
     double dt;
+    std :: vector<double> vel_error;
+    std :: vector<double> head_error;
  public:
     /**
      * @brief Construct a new Controller object
@@ -55,8 +58,7 @@ class Controller {
      * @param pv_vel - current velocity
      * @return std::vector<double> - vector of calculated outputs
      */
-    std::vector<double> computePID(double sp_angle, double pv_angle,
-    double sp_vel, double pv_vel);
+    std::vector<double> computePID(std :: vector <double>);
 
     /**
      * @brief Get the Kp value
@@ -83,6 +85,9 @@ class Controller {
      * @return double 
      */
     double getdt();
+
+   std::vector<double>  computePIDerror(double sp_vel, double pv_vel,
+                                                   double sp_angle ,double pv_angle);
 };
 
 #endif  // INCLUDE_CONTROLLER_HPP_

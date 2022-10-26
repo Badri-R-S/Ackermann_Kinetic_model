@@ -23,6 +23,12 @@ class Robot {
     double wheel_base;
     double wheel_radius;
     double track_width;
+    double alpha_i;
+    double alpha_o;
+    double omega_i;
+    double omega_o;
+    double heading;
+    double speed;
  public :
     /**
      * @brief Construct a new Robot object
@@ -40,7 +46,11 @@ class Robot {
      * @param target_heading - target heading given by the user
      * @return double - steering angle
      */
-    double computeTurnRadius(double target_vel, double target_heading);
+    void Simulate_robot_model(double PID_heading_output, double PID_velocity_output, double dt);
+
+    double getHeading(); 
+
+    double getSpeed(); 
 };
 
 #endif  // INCLUDE_ROBOT_HPP_

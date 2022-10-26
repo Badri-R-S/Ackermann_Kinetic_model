@@ -26,7 +26,7 @@ class Simulation {
          * @brief - function to run the simulation of car
          * @param - none
          */
-        std::vector<double> runSim();
+        void runSim();
 };
 
 #endif  // INCLUDE_SIMULATION_HPP_

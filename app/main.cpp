@@ -18,7 +18,6 @@
 int main() {
     // creating a Simulation class object
     Simulation sim;
-    std::vector<double> test;
-    test = sim.runSim();
+    sim.runSim();
     return 0;
 }

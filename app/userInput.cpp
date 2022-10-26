@@ -34,7 +34,7 @@ UserInput:: UserInput(double iv, double ih) {
  */
 void UserInput::getUserInputs() {
     std::cout << "Enter the target heading (in degrees): ";
-    double target_heading_deg, target_heading_rad{0.0};
+    double target_heading_deg, target_heading_rad =0.0;
     std::cin >> target_heading_deg;
     target_heading_rad = (target_heading_deg*PI)/180;
     this->target_heading = target_heading_rad;

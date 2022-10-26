@@ -33,10 +33,13 @@ const double tmax = 0.05;
  */
 class Controller {
  private:
-    double Kp;
-    double Ki;
-    double Kd;
+    double Kp_vel;
+    double Ki_vel;
+    double Kd_vel;
     double dt;
+    double Kp_head;
+    double Ki_head;
+    double Kd_head;
     std :: vector<double> vel_error;
     std :: vector<double> head_error;
  public:
@@ -48,7 +51,7 @@ class Controller {
      * @param d - derivative gain value
      * @param t - simulation time
      */
-    Controller(double p, double i, double d, double t);
+    Controller(double p_vel, double i_vel, double d_vel, double t, double p_head, double i_head, double d_head);
 
     /**
      * @brief - Funnction to compute system outputs with PID control
@@ -64,20 +67,20 @@ class Controller {
      * @brief Get the Kp value
      * @return double 
      */
-    double getKp();
+    double getKp_vel();
 
     /**
      * @brief Get the Ki value
      * @return double 
      */
-    double getKi();
+    double getKi_vel();
 
     /**
      * @brief Get the Kd value
      * 
      * @return double 
      */
-    double getKd();
+    double getKd_vel();
 
     /**
      * @brief get the dt value
@@ -85,6 +88,12 @@ class Controller {
      * @return double 
      */
     double getdt();
+
+    double getKp_head();
+
+    double getKi_head();
+
+    double getKd_head(); 
 
    std::vector<double>  computePIDerror(double sp_vel, double pv_vel,
                                                    double sp_angle ,double pv_angle);

@@ -135,7 +135,7 @@ std::vector<double>  Controller::computePIDerror(double sp_vel, double pv_vel,
     vel_error.push_back(current_vel_error);
     head_error.push_back(current_angle_error);
     errors.push_back(current_vel_error);
-    errors.push_back(current_vel_error);
+    errors.push_back(current_angle_error);
 
     return errors;
 }

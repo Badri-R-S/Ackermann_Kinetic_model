@@ -75,12 +75,12 @@ void Robot:: Simulate_robot_model(double PID_heading_output, double PID_velocity
         case 'R':
            //std::cout << "Turning right" << std::endl;
             R = wheel_base * 1/tan(PID_heading_output);
-            alpha_i = atan(wheel_base / (R - (track_width / 2)));
-            alpha_o = atan(wheel_base / (R + (track_width / 2)));
-            omega_o += PID_velocity_output;
-            delta_theta = -(wheel_radius * omega_o* dt)
+            alpha_o = atan(wheel_base / (R - (track_width / 2)));
+            alpha_i = atan(wheel_base / (R + (track_width / 2)));
+            omega_i += PID_velocity_output;
+            delta_theta = (wheel_radius * omega_i* dt)
                     / (R + (track_width / 2));
-            omega_i = (delta_theta * (R - (track_width / 2)))
+            omega_o = (delta_theta * (R - (track_width / 2)))
                     / (wheel_radius * dt);
             new_speed = std::abs((R * delta_theta) / dt);
             break;

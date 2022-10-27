@@ -40,13 +40,18 @@ void Simulation::runSim() {
 
     // creating an instance of the controller class
     Controller controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+
+    // running the simulation loop
     for (float i = 0; i < 20; i+=0.1) {
-    //std::cout<<"initialized controller parameters"<<"\n";
-    errors = controller.computePIDerror(u_inp.getTargetVelocity(), car.getSpeed() , u_inp.getTargetHeading() , car.getHeading());
-    //std::cout<<"computed error"<<"\n";
-    std::vector<double> result = controller.computePID(errors);
-    //std::cout<<"Computed PID output"<<"\n";
-    car.Simulate_robot_model(result[1], result[0], controller.getdt());
-    //std::cout<<"Computed result";
+        
+        // computing errors
+        errors = controller.computePIDerror(u_inp.getTargetVelocity(), car.getSpeed() , u_inp.getTargetHeading() , car.getHeading());
+        
+        // computing PID gains
+        std::vector<double> result = controller.computePID(errors);
+        
+        // applying controller to robot and simulating it
+        car.Simulate_robot_model(result[1], result[0], controller.getdt());
+    
     }
 }

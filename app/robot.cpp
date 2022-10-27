@@ -50,7 +50,7 @@ void Robot:: Simulate_robot_model(double PID_heading_output, double PID_velocity
     double new_speed = 0;
 
     if (PID_heading_output > 0) {
-            //std::cout << "Turning left" << std::endl;
+            // Robot is executing a left turn
             R = wheel_base * 1/tan(PID_heading_output);
             alpha_i = atan(wheel_base / (R - (track_width / 2)));
             alpha_o = atan(wheel_base / (R + (track_width / 2)));
@@ -62,7 +62,7 @@ void Robot:: Simulate_robot_model(double PID_heading_output, double PID_velocity
             new_speed = std::abs((R * delta_theta) / dt);
     }
     else if (PID_heading_output < 0) {
-            //std::cout << "Turning right" << std::endl;
+            // Robot is executing a right turn
             R = wheel_base * 1/tan(PID_heading_output);
             alpha_o = atan(wheel_base / (R - (track_width / 2)));
             alpha_i = atan(wheel_base / (R + (track_width / 2)));
@@ -74,18 +74,19 @@ void Robot:: Simulate_robot_model(double PID_heading_output, double PID_velocity
             new_speed = std::abs((R * delta_theta) / dt);
     }
     else {
-            std::cout << "Going straight" << std::endl;
-            //right_wheel_angle = 0;
-            //left_wheel_angle = 0;
+            
+            // Robot is going straight
+            alpha_o = 0;
+            alpha_i = 0;
 
-            //if (left_wheel_velocity >= right_wheel_velocity) {
-            //    left_wheel_velocity += throttle;
-            //    right_wheel_velocity = left_wheel_velocity;
-            //} else {
-            //   right_wheel_velocity += throttle;
-            //    left_wheel_velocity = right_wheel_velocity;
-            //}
-            //new_speed = right_wheel_velocity*wheel_radius;
+            if (omega_i >= omega_o) {
+                omega_o += PID_velocity_output;
+                omega_i = omega_o;
+            } else {
+                omega_i += PID_velocity_output;
+                omega_o = omega_i;
+            }
+            new_speed = omega_i*wheel_radius;
     }
     heading += delta_theta;
     speed = new_speed;

@@ -111,7 +111,6 @@ TEST(PIDerrorcheck, testcompute) {
    error = Controller.computePIDerror(10.0, 5.0, 10.0, 5.0);
    EXPECT_EQ(error.size(),2); 
 }
-
 // Unit test to check if the PID heading ouput is less than 45 degrees
 /**
  * @brief Test stub to check if the output of PID heading is less than

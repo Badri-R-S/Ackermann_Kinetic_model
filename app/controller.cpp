@@ -32,7 +32,6 @@ Controller:: Controller(double p_vel, double i_vel, double d_vel, double t, doub
     Kp_head = p_head;
     Ki_head = i_head;
     Kd_head = d_head;
-
 }
 
 /**
@@ -46,6 +45,8 @@ Controller:: Controller(double p_vel, double i_vel, double d_vel, double t, doub
 std::vector<double> Controller :: computePID(std:: vector<double> errors) {
     double P_vel_ouput, I_vel_output, D_vel_output;
     double P_head_ouput, I_head_output, D_head_output;
+
+    // calculating PID outputs for velocity corrections
     P_vel_ouput = Kp_vel * vel_error.end()[-1];
     
     double sum_vel = 0;
@@ -61,8 +62,8 @@ std::vector<double> Controller :: computePID(std:: vector<double> errors) {
         D_vel_output = Kd_vel * ((vel_error.end()[-1]-vel_error.end()[-2])/dt);
     double PID_vel_output = P_vel_ouput + I_vel_output + D_vel_output;
 
-
-     P_head_ouput = Kp_head * head_error.end()[-1];
+    // calculating PID outputs for heading corrections
+    P_head_ouput = Kp_head * head_error.end()[-1];
     double sum_head = 0;
     for (auto err : head_error) {
         sum_head += err * dt;
@@ -127,13 +128,21 @@ double Controller ::getKd_head() {
 
 std::vector<double>  Controller::computePIDerror(double sp_vel, double pv_vel,
                                                    double sp_angle ,double pv_angle) {
+    
+    // current velocity error
     double current_vel_error = sp_vel - pv_vel;
     std::cout<<"Error_vel :"<<current_vel_error<<"\n";
+
+    // current heading error
     double current_angle_error = sp_angle - pv_angle;
     std::cout<<"Error_head :"<<current_angle_error * 180/PI;
     std:: vector<double> errors;
+
+    // storing all errors
     vel_error.push_back(current_vel_error);
     head_error.push_back(current_angle_error);
+
+    // storing current errors
     errors.push_back(current_vel_error);
     errors.push_back(current_angle_error);
 

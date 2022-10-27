@@ -1,0 +1,125 @@
+\href{https://github.com/Irdab2000/ENPM808X-Midterm/.github/workflows/build_and_coveralls.yml}{\texttt{ }} \href{https://coveralls.io/github/Irdab2000/ENPM808X-Midterm/?branch=master}{\texttt{ }}\hypertarget{md_readme_autotoc_md1}{}\doxysection{$<$a href=\char`\"{}https\+://opensource.\+org/licenses/\+M\+I\+T\char`\"{}$>$$<$img src=\char`\"{}https\+://img.\+shields.\+io/badge/\+License-\/\+M\+I\+T-\/green.\+svg\char`\"{} alt=\char`\"{}\+License\+: M\+I\+T\char`\"{}/$>$$<$/a$>$}\label{md_readme_autotoc_md1}
+\hypertarget{md_readme_autotoc_md2}{}\doxysection{Author}\label{md_readme_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Driver for Phase 0 -\/ Badrinaryanan Raghunathan Srikumar
+\item Navigator for Phase 0 -\/ Smit Dumore
+\item Driver for Phase 1 -\/ Smit Dumore
+\item Navigator for Phase 1 -\/ Badrinaryanan Raghunathan Srikumar
+\end{DoxyItemize}\hypertarget{md_readme_autotoc_md3}{}\doxysection{Overview}\label{md_readme_autotoc_md3}
+The objective of this project is to design and implement a controller for an Ackermann kinematic model for the Acme Robotics company. This controller can possibly be a component of a self driving car software stack. It can take inputs such as a goal location and goal heading from a path planning module and apply the appropriate control input to the motors of the vehicle. The input for our Ackermann controller is a target heading angle and velocity. The output will be the steering angles and angular velocities for each of the front wheel. We assume that the ideal steering angle for a given set of inputs is unique.
+
+
+\begin{DoxyEnumerate}
+\item Ackermann steering geometry is a geometric arrangement of linkages in the steering of a car or other vehicle designed to solve the problem of wheel slippage while executing a turn. The model has independent steerable wheels, to execute a turn, the inner and outer wheels have to trace out concentric circles of different radii. This ensures that the wheels do not slip.
+\item The kinematic equations for this controller can be derived with basic trigonometry. These equations will be implemeted in C++ , because of its performance in real time systems. O\+OP practices will be used to make the code scalable.
+\item The controller will use a P\+ID control algorithm for calculating the ideal inputs to the system at every time step. The P\+ID control has many advantages, the major advantage being its simplicity. But, the biggest disadvantage of P\+ID is that we cannot add any constraints to the output signals and sometimes it can reach very high values, which may not be possible to attain in physical systems.
+\item Here one of our constraints is that maximum steering angle constraint $<$ 45 degrees.
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md4}{}\doxysection{A\+I\+P and Sprint planning}\label{md_readme_autotoc_md4}
+We followed Agile Iterative process throughout the develpment this project including pair programming , switching between Driver and Navigator roles in phase 0 and 1. The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets can be found below\+:
+
+
+\begin{DoxyEnumerate}
+\item \href{https://docs.google.com/spreadsheets/d/15MsHHnaPDYa6_ac9_E7A4tZtzg4NLevfynDoTfalXG4/edit\#gid=0}{\texttt{ https\+://docs.\+google.\+com/spreadsheets/d/15\+Ms\+H\+Hna\+P\+D\+Ya6\+\_\+ac9\+\_\+\+E7\+A4t\+Ztzg4\+N\+Levfyn\+Do\+Tfal\+X\+G4/edit\#gid=0}}
+\item \href{https://docs.google.com/document/d/1Jcqsh3hmOmNMl5sPOOUJDDctLigFcafv_c4tUjaEYhQ/edit}{\texttt{ https\+://docs.\+google.\+com/document/d/1\+Jcqsh3hm\+Om\+N\+Ml5s\+P\+O\+O\+U\+J\+D\+Dct\+Lig\+Fcafv\+\_\+c4t\+Uja\+E\+Yh\+Q/edit}}
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md5}{}\doxysection{U\+M\+L Diagram}\label{md_readme_autotoc_md5}
+ \hypertarget{md_readme_autotoc_md6}{}\doxysection{Quad Chart}\label{md_readme_autotoc_md6}
+ \hypertarget{md_readme_autotoc_md7}{}\doxysection{Presentation video link}\label{md_readme_autotoc_md7}
+Phase 0 \+: -\/\href{https://youtu.be/P2H2bpZX4jc}{\texttt{ https\+://youtu.\+be/\+P2\+H2bp\+Z\+X4jc}} Phase 1 \+: -\/\href{https://youtu.be/Pn1aeKCDAUI}{\texttt{ https\+://youtu.\+be/\+Pn1ae\+K\+C\+D\+A\+UI}}\hypertarget{md_readme_autotoc_md8}{}\doxysection{Doxygen}\label{md_readme_autotoc_md8}
+Doxygen is the de facto standard tool for generating documentation from annotated C++ sources. It can generate an on-\/line documentation browser (in H\+T\+ML).
+
+Command to install doxygen, in command line type
+
+sudo apt install doxygen
+
+To generate doxygen documentation after installation, type
+
+doxygen -\/g $<$config-\/file$>$
+
+where $<$config-\/file$>$ is the name of the configuration file that you want to create. In this file edit the input and output directories, and the files that have to be included or excluded while generating the Doxygen comments. Finally, after generating the config file, type
+
+doxygen $<$config-\/file$>$
+
+This will generate a H\+T\+ML and L\+A\+T\+EX output of the Doxygen comments inside the output directory mentioned in the configuration file.\hypertarget{md_readme_autotoc_md9}{}\doxysection{Compiling and running via command-\/line}\label{md_readme_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone -\/-\/recursive https://github.com/smitdumore/ENPM808X-\/Midterm.git}
+\DoxyCodeLine{cd <path to repository>}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{Run programme: ./app/shell-\/app}
+\DoxyCodeLine{Enter target heading in degrees}
+\DoxyCodeLine{Enter target speed in m/s}
+\DoxyCodeLine{}
+\DoxyCodeLine{Run test: ./test/cpp-\/test}
+\end{DoxyCode}
+\hypertarget{md_readme_autotoc_md10}{}\doxysection{Building for code coverage (for assignments beginning in Week 4)}\label{md_readme_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-\/get install lcov}
+\DoxyCodeLine{cmake -\/D COVERAGE=ON -\/D CMAKE\_BUILD\_TYPE=Debug ../}
+\DoxyCodeLine{make}
+\DoxyCodeLine{make code\_coverage}
+\end{DoxyCode}
+
+
+This generates a index.\+html page in the build/coverage sub-\/directory that can be viewed locally in a web browser.\hypertarget{md_readme_autotoc_md11}{}\doxysection{Working with Eclipse I\+DE}\label{md_readme_autotoc_md11}
+\hypertarget{md_readme_autotoc_md12}{}\doxysection{Installation}\label{md_readme_autotoc_md12}
+In your Eclipse workspace directory (or create a new one), checkout the repo (and submodules) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir -\/p \string~/workspace}
+\DoxyCodeLine{cd \string~/workspace}
+\DoxyCodeLine{git clone -\/-\/recursive https://github.com/dpiet/cpp-\/boilerplate}
+\end{DoxyCode}
+
+
+In your work directory, use cmake to create an Eclipse project for an \mbox{[}out-\/of-\/source build\mbox{]} of cpp-\/boilerplate
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd \string~/workspace}
+\DoxyCodeLine{mkdir -\/p boilerplate-\/eclipse}
+\DoxyCodeLine{cd boilerplate-\/eclipse}
+\DoxyCodeLine{cmake -\/G "Eclipse CDT4 -\/ Unix Makefiles" -\/D CMAKE\_BUILD\_TYPE=Debug -\/D CMAKE\_ECLIPSE\_VERSION=4.7.0 -\/D CMAKE\_CXX\_COMPILER\_ARG1=-\/std=c++14 ../cpp-\/boilerplate/}
+\end{DoxyCode}
+\hypertarget{md_readme_autotoc_md13}{}\doxysection{Import}\label{md_readme_autotoc_md13}
+Open Eclipse, go to File -\/$>$ Import -\/$>$ General -\/$>$ Existing Projects into Workspace -\/$>$ Select \char`\"{}boilerplate-\/eclipse\char`\"{} directory created previously as root directory -\/$>$ Finish\hypertarget{md_readme_autotoc_md14}{}\doxysection{Edit}\label{md_readme_autotoc_md14}
+Source files may be edited under the \char`\"{}\mbox{[}\+Source Directory\mbox{]}\char`\"{} label in the Project Explorer.\hypertarget{md_readme_autotoc_md15}{}\doxysubsection{Build}\label{md_readme_autotoc_md15}
+To build the project, in Eclipse, unfold boilerplate-\/eclipse project in Project Explorer, unfold Build Targets, double click on \char`\"{}all\char`\"{} to build all projects.\hypertarget{md_readme_autotoc_md16}{}\doxysubsection{Run}\label{md_readme_autotoc_md16}
+
+\begin{DoxyEnumerate}
+\item In Eclipse, right click on the boilerplate-\/eclipse in Project Explorer, select Run As -\/$>$ Local C/\+C++ Application
+\item Choose the binaries to run (e.\+g. shell-\/app, cpp-\/test for unit testing)
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md17}{}\doxysubsection{Debug}\label{md_readme_autotoc_md17}
+
+\begin{DoxyEnumerate}
+\item Set breakpoint in source file (i.\+e. double click in the left margin on the line you want the program to break).
+\item In Eclipse, right click on the boilerplate-\/eclipse in Project Explorer, select Debug As -\/$>$ Local C/\+C++ Application, choose the binaries to run (e.\+g. shell-\/app).
+\item If prompt to \char`\"{}\+Confirm Perspective Switch\char`\"{}, select yes.
+\item Program will break at the breakpoint you set.
+\item Press Step Into (F5), Step Over (F6), Step Return (F7) to step/debug your program.
+\item Right click on the variable in editor to add watch expression to watch the variable in debugger window.
+\item Press Terminate icon to terminate debugging and press C/\+C++ icon to switch back to C/\+C++ perspetive view (or Windows-\/$>$Perspective-\/$>$Open Perspective-\/$>$C/\+C++).
+\end{DoxyEnumerate}\hypertarget{md_readme_autotoc_md18}{}\doxysubsection{Plugins}\label{md_readme_autotoc_md18}
+
+\begin{DoxyItemize}
+\item Cpp\+Ch\+Eclipse
+
+To install and run cppcheck in Eclipse
+\begin{DoxyEnumerate}
+\item In Eclipse, go to Window -\/$>$ Preferences -\/$>$ C/\+C++ -\/$>$ cppcheclipse. Set cppcheck binary path to \char`\"{}/usr/bin/cppcheck\char`\"{}.
+\item To run C\+P\+P\+Check on a project, right click on the project name in the Project Explorer and choose cppcheck -\/$>$ Run cppcheck.
+\end{DoxyEnumerate}
+\item Google C++ Sytle
+
+To include and use Google C++ Style formatter in Eclipse
+\begin{DoxyEnumerate}
+\item In Eclipse, go to Window -\/$>$ Preferences -\/$>$ C/\+C++ -\/$>$ Code Style -\/$>$ Formatter. Import \href{https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-cpp-google-style.xml}{\texttt{ eclipse-\/cpp-\/google-\/style}} and apply.
+\item To use Google C++ style formatter, right click on the source code or folder in Project Explorer and choose Source -\/$>$ Format
+\end{DoxyEnumerate}
+\item Git
+
+It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you\textquotesingle{}re interested in this, try it out yourself and contact me on Canvas. 
+\end{DoxyItemize}

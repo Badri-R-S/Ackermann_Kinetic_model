@@ -149,7 +149,7 @@ double Controller ::getKd_head() {
  * @param pv_vel - current value of velocity
  * @param sp_angle - target value for heading
  * @param pv_angle - current value of heading
- * @return std::vector<double> - vector storing errors
+ * @return void
  */
 void  Controller::computePIDerror(double sp_vel,
                         double pv_vel, double sp_angle, double pv_angle) {

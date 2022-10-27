@@ -43,3 +43,21 @@ TEST(testingforkivel, TestFail) {
      Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
      EXPECT_TRUE(IsBetweenmaxmin(Controller.getKi_vel(), Kimin, Kimax));
 }
+// Unit test to check if the velocity Derivative constant is in the range
+/**
+ * @brief Test stub to check if Kd_vel is in the range
+ * 
+ */
+TEST(testingforkdvel, TestFail) {
+     Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+     EXPECT_TRUE(IsBetweenmaxmin(Controller.getKd_vel(), Kdmin, Kdmax));
+}
+// Unit test to check if dt is in the range
+/**
+ * @brief Test stub to check if dt is in the range
+ * 
+ */
+TEST(testingfortime, TestFail) {
+     Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+     EXPECT_TRUE(IsBetweenmaxmin(Controller.getdt(), 0, tmax));
+}

@@ -89,3 +89,25 @@ TEST(testingforkdhead, TestFail) {
      Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
      EXPECT_TRUE(IsBetweenmaxmin(Controller.getKd_head(), Kdmin, Kdmax));
 }
+// Test stub to check userInput getter functions
+/**
+ * @brief Test stub to check userInput getter functions
+ * 
+ */ 
+TEST(Targetvelcheck, testcompute) {
+    UserInput UserInput(0.0 , 0.0);
+    EXPECT_EQ(UserInput.getTargetVelocity() , 0);
+    EXPECT_EQ(UserInput.getTargetHeading(), 0);
+}
+// Unit test to check if the error vector returned by PIDerror compute
+// function is of proper size
+/**
+ * @brief Test stub to check error vector returned by computePIDerror
+ * 
+ */
+TEST(PIDerrorcheck, testcompute) {
+   Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+   std :: vector <double> error;
+   error = Controller.computePIDerror(10.0, 5.0, 10.0, 5.0);
+   EXPECT_EQ(error.size(),2); 
+}

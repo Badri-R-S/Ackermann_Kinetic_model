@@ -61,3 +61,31 @@ TEST(testingfortime, TestFail) {
      Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
      EXPECT_TRUE(IsBetweenmaxmin(Controller.getdt(), 0, tmax));
 }
+// Unit test to check if heading proportional constant is in the range
+/**
+ * @brief Test stub to check if Kp_head is in the range
+ * 
+ */
+TEST(testingforkphead, TestFail) {
+     Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+     EXPECT_TRUE(IsBetweenmaxmin(Controller.getKp_head(), Kpmin, Kpmax));
+}
+// Unit test to check if heading Integral constant is in the range
+/**
+ * @brief Test stub to check if Ki_head is in the range
+ * 
+ */
+
+TEST(testingforkihead, TestFail) {
+     Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+     EXPECT_TRUE(IsBetweenmaxmin(Controller.getKi_head(), Kimin, Kimax));
+}
+// Unit test to check if heading derivative constant is in the range
+/**
+ * @brief Test stub to check if Kd_head is in the range
+ * 
+ */
+TEST(testingforkdhead, TestFail) {
+     Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+     EXPECT_TRUE(IsBetweenmaxmin(Controller.getKd_head(), Kdmin, Kdmax));
+}

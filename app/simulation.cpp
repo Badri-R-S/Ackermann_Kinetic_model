@@ -27,7 +27,6 @@
 void Simulation::runSim() {
     double initial_heading = 0.0;
     double initial_velocity = 0.0;
-    std :: vector<double> errors;
 
     // getting user inputs
     UserInput u_inp(initial_velocity, initial_heading);
@@ -39,15 +38,15 @@ void Simulation::runSim() {
     std:: cout << "Initialized car parameters" << std::endl;
 
     // creating an instance of the controller class
-    Controller controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+    Controller controller(0.25, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
 
     // running the simulation loop
     for (float i = 0; i < 20; i+=0.1) {
         // computing errors
-        errors = controller.computePIDerror(u_inp.getTargetVelocity(),
+        controller.computePIDerror(u_inp.getTargetVelocity(),
         car.getSpeed(), u_inp.getTargetHeading(), car.getHeading());
         // computing PID gains
-        std::vector<double> result = controller.computePID(errors);
+        std::vector<double> result = controller.computePID();
         // applying controller to robot and simulating it
         car.Simulate_robot_model(result[1], result[0], controller.getdt());
     }

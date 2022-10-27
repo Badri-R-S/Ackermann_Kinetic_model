@@ -70,7 +70,7 @@ class Controller {
    * @return std::vector<double> - returns the PID velocity and heading errors as a vector
    */
 
-    std::vector<double> computePID(std :: vector <double>);
+    std::vector<double> computePID();
 
    /**
    * @brief Get the Kp_vel value
@@ -121,7 +121,7 @@ class Controller {
    * @param pv_angle - current value of heading
    * @return std::vector<double> - vector storing errors
    */
-    std::vector<double>  computePIDerror(double sp_vel, double pv_vel,
+    void computePIDerror(double sp_vel, double pv_vel,
                                     double sp_angle, double pv_angle);
 };
 

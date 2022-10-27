@@ -22,6 +22,12 @@ class Simulation {
        // simulation time variable
         int sim_time;
  public:
+       /**
+        * @brief Construct a new Simulation object
+        */
+       Simulation() {
+              sim_time = 0.0;
+       }
         /**
          * @brief - Function that converges the functionalities of all the cpp
                     files under one roof.

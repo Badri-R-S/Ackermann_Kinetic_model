@@ -14,6 +14,7 @@
 #include "../include/controller.hpp"
 #include <iostream>
 #include <tuple>
+#include <numeric>
 #define PI 3.14159265
 
 /**
@@ -48,16 +49,17 @@ Controller:: Controller(double p_vel, double i_vel, double d_vel, double t,
                    computed by computePIDerror
  * @return std::vector<double> - returns the PID velocity and heading errors as a vector
  */
-std::vector<double> Controller :: computePID(std:: vector<double> errors) {
+std::vector<double> Controller :: computePID() {
     double P_vel_ouput, I_vel_output, D_vel_output;
     double P_head_ouput, I_head_output, D_head_output;
 
     // calculating PID outputs for velocity corrections
     P_vel_ouput = Kp_vel * vel_error.end()[-1];
     double sum_vel = 0;
-    for (auto err : vel_error) {
-        sum_vel += err * dt;
-    }
+    //for (auto err : vel_error) {
+      //  sum_vel = sum_vel + (err * dt);
+    sum_vel = std::accumulate(vel_error.begin(), vel_error.end(),0);
+    //}
     I_vel_output = Ki_vel * sum_vel;
     if (vel_error.size() < 2)
         D_vel_output = 0;
@@ -68,9 +70,10 @@ std::vector<double> Controller :: computePID(std:: vector<double> errors) {
     // calculating PID outputs for heading corrections
     P_head_ouput = Kp_head * head_error.end()[-1];
     double sum_head = 0;
-    for (auto err : head_error) {
-        sum_head += err * dt;
-    }
+    //for (auto err : head_error) {
+      //  sum_head += err * dt;
+    //}
+    std :: accumulate(head_error.begin(), head_error.end(), 0);
     I_head_output = Ki_head * sum_head;
     if (head_error.size() < 2)
         D_head_output = 0;
@@ -148,7 +151,7 @@ double Controller ::getKd_head() {
  * @param pv_angle - current value of heading
  * @return std::vector<double> - vector storing errors
  */
-std::vector<double>  Controller::computePIDerror(double sp_vel,
+void  Controller::computePIDerror(double sp_vel,
                         double pv_vel, double sp_angle, double pv_angle) {
     // current velocity error
     double current_vel_error = sp_vel - pv_vel;
@@ -156,15 +159,8 @@ std::vector<double>  Controller::computePIDerror(double sp_vel,
     // current heading error
     double current_angle_error = sp_angle - pv_angle;
     std::cout << "Error_head :" << current_angle_error * 180/PI;
-    std:: vector<double> errors;
 
     // storing all errors
     vel_error.push_back(current_vel_error);
     head_error.push_back(current_angle_error);
-
-    // storing current errors
-    errors.push_back(current_vel_error);
-    errors.push_back(current_angle_error);
-
-    return errors;
 }

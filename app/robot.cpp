@@ -49,7 +49,6 @@ Robot ::Robot(double wb, double wr, double tw) {
  */
 void Robot:: Simulate_robot_model(double PID_heading_output,
                          double PID_velocity_output, double dt ) {
-    char turn;
     double R;
     double delta_theta = 0;
     double new_speed = 0;

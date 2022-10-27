@@ -12,8 +12,9 @@
 
 // cpp headers
 #include <iostream>
-#include "../include/simulation.hpp"
 #include <vector>
+#include "../include/simulation.hpp"
+
 
 int main() {
     // creating a Simulation class object

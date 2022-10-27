@@ -40,17 +40,24 @@ class Robot {
     Robot(double wb, double wr, double tw);
 
     /**
-     * @brief Compute the turn radius for the car 
-     * 
-     * @param target_vel - target velocity given by the user
-     * @param target_heading - target heading given by the user
-     * @return double - steering angle
-     */
-    void Simulate_robot_model(double PID_heading_output, double PID_velocity_output, double dt);
-
-    double getHeading(); 
-
-    double getSpeed(); 
+    * @brief Function that computes the final speed and heading by taking
+             in the PID controllers' output and time interval 
+    * @param PID_heading_output 
+    * @param PID_velocity_output 
+    * @param dt 
+    */
+    void Simulate_robot_model(double PID_heading_output,
+        double PID_velocity_output, double dt);
+    /**
+    * @brief function to get initial heading 
+    * @return double
+    */
+    double getHeading();
+     /**
+    * @brief function to get initial speed
+    * @return double 
+    */
+    double getSpeed();
 };
 
 #endif  // INCLUDE_ROBOT_HPP_

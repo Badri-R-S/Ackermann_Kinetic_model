@@ -23,7 +23,8 @@ class Simulation {
         int sim_time;
  public:
         /**
-         * @brief - function to run the simulation of car
+         * @brief - Function that converges the functionalities of all the cpp
+                    files under one roof.
          * @param - none
          */
         void runSim();

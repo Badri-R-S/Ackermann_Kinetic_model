@@ -19,10 +19,10 @@
 #include "../include/controller.hpp"
 #include "../include/robot.hpp"
 
-//Simulation::Simulation(){}
 /**
- * @brief - function to run the simulation of car
- * @param - none
+ * @brief Function that converges the functionalities of all the cpp
+          files under one roof.
+ * 
  */
 void Simulation::runSim() {
     double initial_heading = 0.0;
@@ -32,26 +32,23 @@ void Simulation::runSim() {
     // getting user inputs
     UserInput u_inp(initial_velocity, initial_heading);
     u_inp.getUserInputs();
-    std :: cout<< "Got user inputs"<<"\n";
+    std :: cout << "Got user inputs" << "\n";
 
     // creating an instance of the robot class
     Robot car(4.0, 0.3, 2.0);
-    std:: cout<<"Initialized car parameters"<<std::endl;
+    std:: cout << "Initialized car parameters" << std::endl;
 
     // creating an instance of the controller class
     Controller controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
 
     // running the simulation loop
     for (float i = 0; i < 20; i+=0.1) {
-        
         // computing errors
-        errors = controller.computePIDerror(u_inp.getTargetVelocity(), car.getSpeed() , u_inp.getTargetHeading() , car.getHeading());
-        
+        errors = controller.computePIDerror(u_inp.getTargetVelocity(),
+        car.getSpeed(), u_inp.getTargetHeading(), car.getHeading());
         // computing PID gains
         std::vector<double> result = controller.computePID(errors);
-        
         // applying controller to robot and simulating it
         car.Simulate_robot_model(result[1], result[0], controller.getdt());
-    
     }
 }

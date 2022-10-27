@@ -31,8 +31,8 @@
  * 
  */
 TEST(testingforkpvel, Testfail) {
-   Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
-    EXPECT_TRUE(IsBetweenmaxmin(Controller.getKp_vel(), Kpmin, Kpmax));
+     Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+     EXPECT_TRUE(IsBetweenmaxmin(Controller.getKp_vel(), Kpmin, Kpmax));
 }
 // Unit test to check if the velocity Integral constant is in the range
 /**
@@ -106,10 +106,10 @@ TEST(Targetvelcheck, testcompute) {
  * 
  */
 TEST(PIDerrorcheck, testcompute) {
-   Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
-   std :: vector <double> error;
-   error = Controller.computePIDerror(10.0, 5.0, 10.0, 5.0);
-   EXPECT_EQ(error.size(),2); 
+     Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
+     std :: vector <double> error;
+     error = Controller.computePIDerror(10.0, 5.0, 10.0, 5.0);
+     EXPECT_EQ(error.size(), 2);
 }
 // Unit test to check if the PID heading ouput is less than 45 degrees
 /**
@@ -138,9 +138,9 @@ TEST(PIDcompute, testcompute) {
  * 
  */
 TEST(Robot, testcompute) {
-   Robot Robot(2.0, 2.0, 2.0);
-   EXPECT_EQ(Robot.getHeading(),0);
-   EXPECT_EQ(Robot.getSpeed(),0);
+     Robot Robot(2.0, 2.0, 2.0);
+     EXPECT_EQ(Robot.getHeading(), 0);
+     EXPECT_EQ(Robot.getSpeed(), 0);
 }
 
 

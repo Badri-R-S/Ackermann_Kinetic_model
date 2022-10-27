@@ -25,7 +25,7 @@ const double Kimax = 1;
 const double Kimin = -1;
 const double Kdmax = 1;
 const double Kdmin = -1;
-const double tmax = 0.05;
+const double tmax = 0.1;
 
 
 /**

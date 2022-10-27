@@ -49,19 +49,8 @@ void Robot:: Simulate_robot_model(double PID_heading_output, double PID_velocity
     double delta_theta = 0;
     double new_speed = 0;
 
-    if (PID_heading_output > 0)
-        turn = 'L';
-    else if (PID_heading_output < 0)
-        turn = 'R';
-    else
-        turn = 'S';
-
-    switch (turn) {
-        default:
-            std::cout << "Not a valid steering angle" << std::endl;
-
-        case 'L':
-           //std::cout << "Turning left" << std::endl;
+    if (PID_heading_output > 0) {
+        //std::cout << "Turning left" << std::endl;
             R = wheel_base * 1/tan(PID_heading_output);
             alpha_i = atan(wheel_base / (R - (track_width / 2)));
             alpha_o = atan(wheel_base / (R + (track_width / 2)));
@@ -71,10 +60,10 @@ void Robot:: Simulate_robot_model(double PID_heading_output, double PID_velocity
             omega_i = (delta_theta * (R - (track_width / 2)))
                     / (wheel_radius * dt);
             new_speed = std::abs((R * delta_theta) / dt);
-            break;
-        case 'R':
-           //std::cout << "Turning right" << std::endl;
-            R = wheel_base * 1/tan(PID_heading_output);
+    }
+    else if (PID_heading_output < 0) {
+        //std::cout << "Turning right" << std::endl;
+        R = wheel_base * 1/tan(PID_heading_output);
             alpha_o = atan(wheel_base / (R - (track_width / 2)));
             alpha_i = atan(wheel_base / (R + (track_width / 2)));
             omega_i += PID_velocity_output;
@@ -83,9 +72,9 @@ void Robot:: Simulate_robot_model(double PID_heading_output, double PID_velocity
             omega_o = (delta_theta * (R - (track_width / 2)))
                     / (wheel_radius * dt);
             new_speed = std::abs((R * delta_theta) / dt);
-            break;
-        //case 'S':
-//            std::cout << "Going straight" << std::endl;
+    }
+    else {
+        std::cout << "Going straight" << std::endl;
             //right_wheel_angle = 0;
             //left_wheel_angle = 0;
 
@@ -97,8 +86,6 @@ void Robot:: Simulate_robot_model(double PID_heading_output, double PID_velocity
             //    left_wheel_velocity = right_wheel_velocity;
             //}
             //new_speed = right_wheel_velocity*wheel_radius;
-            //break;
-    //}
     }
     heading += delta_theta;
     speed = new_speed;

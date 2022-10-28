@@ -111,7 +111,9 @@ TEST(PIDerrorcheck, testcompute) {
      EXPECT_NO_THROW(Controller.computePIDerror(10.0, 5.0, 10.0, 5.0));
      Robot car(4.0, 0.3, 2.0);
      std::vector<double> result = {0.0, 0.0};
-     car.Simulate_robot_model(result[1], result[0], Controller.getdt());
+     EXPECT_NO_THROW(car.Simulate_robot_model(result[1], 
+     result[0], Controller.getdt()));
+     
 }
 // Unit test to check if the PID heading ouput is less than 45 degrees
 /**
@@ -148,5 +150,11 @@ TEST(Robot, testcompute) {
      Simulation sim;
      EXPECT_NO_THROW(sim.runSim());
 }
-
-
+//Unit test to check Robot constructor
+/**
+ * @brief Testing Robot constructor
+ * 
+ */
+TEST(Robotconstructor, testrobot) {
+     EXPECT_NO_THROW(Robot r(2.0 , 2.0 , 2.0));
+}

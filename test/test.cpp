@@ -105,34 +105,25 @@ TEST(Targetvelcheck, testcompute) {
  * @brief Test stub to check error vector returned by computePIDerror
  * 
  */
- /*
 TEST(PIDerrorcheck, testcompute) {
      Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01);
      std :: vector <double> error;
-     error = Controller.computePIDerror(10.0, 5.0, 10.0, 5.0);
-     EXPECT_EQ(error.size(), 2);
+     EXPECT_NO_THROW(Controller.computePIDerror(10.0, 5.0, 10.0, 5.0));
 }
-*/
 // Unit test to check if the PID heading ouput is less than 45 degrees
 /**
  * @brief Test stub to check if the output of PID heading is less than
           45 degrees
  * 
  */
-/*
+
 TEST(PIDcompute, testcompute) {
   Controller Controller(0.05, 0.001, 0.1, 0.1, 0.5, 0.001, 0.01); 
-  std :: vector <double> error = { 5.0 , 5.0};
   std :: vector <double> PID_output;
-  PID_output = Controller.computePID(error);
-  //std::cout<<PID_output.size();
-  if(PID_output.size() > 0){
-    EXPECT_LE(PID_output[1],(45/180) * 3.14159265); 
-  }else{
-    EXPECT_EQ(PID_output.size() , 0);
-  }
+  PID_output = Controller.computePID();
+  EXPECT_GE(0.0, PID_output.size());
 }
-*/
+
 // Unit test to check if initial heading and speed are assigned correctly
 /**
  * @brief Test stub to check if initial heading and speed are assigned 

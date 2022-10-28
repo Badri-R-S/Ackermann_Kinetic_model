@@ -52,14 +52,14 @@ Controller:: Controller(double p_vel, double i_vel, double d_vel, double t,
 std::vector<double> Controller :: computePID() {
     double P_vel_ouput, I_vel_output, D_vel_output;
     double P_head_ouput, I_head_output, D_head_output;
+    std :: vector<double> PID_output;
+
+    if (vel_error.empty() || head_error.empty()) return PID_output;
 
     // calculating PID outputs for velocity corrections
     P_vel_ouput = Kp_vel * vel_error.end()[-1];
     double sum_vel = 0;
-    //for (auto err : vel_error) {
-      //  sum_vel = sum_vel + (err * dt);
-    sum_vel = std::accumulate(vel_error.begin(), vel_error.end(),0);
-    //}
+    sum_vel = std::accumulate(vel_error.begin(), vel_error.end(), 0);
     I_vel_output = Ki_vel * sum_vel;
     if (vel_error.size() < 2)
         D_vel_output = 0;
@@ -70,9 +70,6 @@ std::vector<double> Controller :: computePID() {
     // calculating PID outputs for heading corrections
     P_head_ouput = Kp_head * head_error.end()[-1];
     double sum_head = 0;
-    //for (auto err : head_error) {
-      //  sum_head += err * dt;
-    //}
     std :: accumulate(head_error.begin(), head_error.end(), 0);
     I_head_output = Ki_head * sum_head;
     if (head_error.size() < 2)
@@ -81,7 +78,6 @@ std::vector<double> Controller :: computePID() {
         D_head_output = Kd_head * ((head_error.end()[-1]-
                                  head_error.end()[-2])/dt);
     double PID_head_output = P_head_ouput + I_head_output + D_head_output;
-    std :: vector<double> PID_output;
     PID_output.push_back(PID_vel_output);
     PID_output.push_back(PID_head_output);
     return PID_output;

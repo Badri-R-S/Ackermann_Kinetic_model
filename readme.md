@@ -33,7 +33,7 @@ The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets c
 
 ## UML Diagram
 <p align="center">
-<img src="UML/revised/UML_classdiagram_Phase2.png"/>
+<img src="UML/revised/UML_classdiagram_Phase2.jpeg"/>
 </p>
 
 
@@ -44,11 +44,11 @@ The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets c
 
 ## Presentation video link 
 
-Phase 0 :
+-Phase 0 :
  -https://youtu.be/P2H2bpZX4jc
-Phase 1 :
+-Phase 1 :
  -https://youtu.be/Pn1aeKCDAUI
-Phase 2 :
+-Phase 2 :
  -https://youtu.be/IUpdU9HZyIg
  
 ## Doxygen

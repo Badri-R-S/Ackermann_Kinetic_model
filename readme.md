@@ -37,7 +37,7 @@ The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets c
 </p>
 
 
-##Quad Chart
+## Quad Chart
 <p align="center">
 <img src="Quad chart/Quad-Chart-Phase-2.jpeg"/>
 </p>

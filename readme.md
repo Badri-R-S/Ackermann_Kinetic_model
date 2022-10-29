@@ -11,6 +11,9 @@
 - Driver for Phase 1 - Smit Dumore
 - Navigator for Phase 1 - Badrinaryanan Raghunathan Srikumar
 
+- Driver for Phase 2 - Badrinarayanan Raghunathan Srikumar
+- Navigator for Phase 2 - Smit Dumore
+
 ## Overview
 
 The objective of this project is to design and implement a controller for an Ackermann kinematic model for the Acme Robotics company. This controller can possibly be a component of a self driving car software stack. It can take inputs such as a goal location and goal heading from a path planning module and apply the appropriate control input to the motors of the vehicle. The input for our Ackermann controller is a target heading angle and velocity. The output will be the steering angles and angular velocities for each of the front wheel. We assume that the ideal steering angle for a given set of inputs is unique.
@@ -30,12 +33,13 @@ The Product Backlog, Iteration Backlog and Work Log and sprint planning sheets c
 
 ## UML Diagram
 <p align="center">
-<img src="UML/revised/UML_classDiagram_Phase1_v2.png"/>
+<img src="UML/revised/UML_classdiagram_Phase2.png"/>
 </p>
+
 
 ##Quad Chart
 <p align="center">
-<img src="Quad chart/Quad-Chart-Phase 0.jpg"/>
+<img src="Quad chart/Quad-Chart-Phase-2.jpeg"/>
 </p>
 
 ## Presentation video link 

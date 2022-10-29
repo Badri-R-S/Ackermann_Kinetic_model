@@ -94,6 +94,12 @@ void Robot:: Simulate_robot_model(double PID_heading_output,
     speed = new_speed;
     std ::cout << "heading : " << 180*heading/PI << "\n";
     std ::cout << "Speed :" << speed << "\n";
+    std ::cout << "**********OUTPUTS***************" << "\n";
+    std :: cout << "Inner steering angle :" << alpha_i << "\n";
+    std :: cout << "Outer steering angle :" << alpha_o << "\n";
+    std :: cout << "Inner wheel linear velocity :" << omega_i*wheel_radius << "\n";
+    std :: cout << "Outer wheel linear velocity :" << omega_i*wheel_radius << "\n";
+    std ::cout << "********************************" << "\n";
 }
 /**
  * @brief function to get initial heading
